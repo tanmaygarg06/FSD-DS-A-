@@ -7,12 +7,28 @@
 </head>
 <body>
     <script>
-        let a=10;
-        let b=19;
-        if(a>b){
-            document.write("A is greater");
+        // let a=10;
+        // let b=19;
+        // if(a>b){
+        //     document.write("A is greater");
+        // }
+        // document.write("B is greater");
+        let n=prompt("Enter Number");
+        let num=n;
+        let s=0;
+        while(n>0){
+            let r=n%10;
+            s=s+(r*r*r);
+            n=Math.floor(n/10);
+            
         }
-        document.write("B is greater");
+        if(s==num){
+            document.write("Armstrong");
+        }
+        else{
+            document.write("Not Armstrong");
+        }
+
     </script>
 </body>
 </html>
