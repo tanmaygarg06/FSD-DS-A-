@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //creation of Object
+
+        const student={
+            name:"Tanmay",
+            class:"B.TECH",
+            fee:100000
+        }
+        // document.write("<br>",student.name); // for accessing one by one value based on key
+        // document.write("<br>",student.class);
+        // document.write("<br>",student.fee);
+        // document.write(student);
+
+        // if we want only key then we use only i in document write instead of student[i]
+
+        //to access all elements of object value 
+        for(let i in student){
+            document.write("<br>",student[i]);
+        }
+    </script>
+</body>
+</html>

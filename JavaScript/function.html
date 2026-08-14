@@ -19,11 +19,49 @@
     //   const r = abes();
     //   document.write(r);
 
-      const sum = (a, b) => {
-        return a + b;
-      };
-      const res = sum(9, 9);
-      document.write(res);
+    //   const sum = (a, b) => {
+    //     return a + b;
+    //   };
+    //   const res = sum(9, 9);
+    //   document.write(res);
+
+    let n=prompt("Enter Number choice (1-3) : ");
+    if(n==1){
+        const res=car();
+        document.write(res);
+    }
+    else if(n==2){
+        const res=plane();
+        document.write(res);
+    }
+    else if(n==3){
+        const res=heli();
+        document.write(res);
+    }
+    else{
+        document.write("Invalid")
+    }
+    const car = () =>{
+        let name=prompt("Enter Name : ");
+        let cap=prompt("Enter Capacity : ");
+        let cost=cap*10;
+        return cost;
+
+    }
+    const plane = () =>{
+        let name=prompt("Enter Name : ");
+        let cap=prompt("Enter Capacity : ");
+        let cost=cap*100;
+        return cost;
+    }
+    const heli = () =>{
+        let name=prompt("Enter Name : ");
+        let cap=prompt("Enter Capacity : ");
+        let cost=cap*1000;
+        return cost;
+    }
+
+
     </script>
   </body>
 </html>
