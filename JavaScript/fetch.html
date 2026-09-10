@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Shop</title>
+
+    <style>
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      table {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+        font-size: 30px;
+        color: brown;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>title</th>
+          <th>image</th>
+          <th>category</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody id="data"></tbody>
+    </table>
+    <script>
+      const ele = document.getElementById("data");
+      const url = "https://dummyjson.com/products";
+      async function loaddata() {
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          console.log("Data", data.products);
+          let row = "";
+          data.products.map((i, idx) => {
+            row += `
+                    <tr>
+                        <td>${idx + 1}</td>
+                        <td>${i.title}</td>
+                        <td><img src="${i.images[0]}}"/></td>
+                        <td>${i.category}</td>
+                        <td>${i.price}</td>
+                        </tr>
+                    `;
+            ele.innerHTML = row;
+          });
+        } catch (err) {
+          console.log("Error",err);
+        }
+      }
+      loaddata();
+    </script>
+    
+  </body>
+</html>
